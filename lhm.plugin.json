@@ -1,0 +1,13 @@
+{
+  "identifier": "nerdit",
+  "name": "Nerdit",
+  "version": "1.0.0",
+  "description": "Deploy, run and share the apps you build with AI, on your own machines or a Nerdit box, with access you approve.",
+  "category": "developer",
+  "cloudEndpoint": "https://mcp.nerdit.ai/mcp",
+  "homepage": "https://nerdit.ai/?utm_source=lobehub",
+  "icon": "https://nerdit.ai/logo.svg",
+  "author": "Nerdit",
+  "authorUrl": "https://github.com/nerdit-ai",
+  "tags": ["deploy", "paas", "self-hosted", "devops"]
+}

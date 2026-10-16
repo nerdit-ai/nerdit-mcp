@@ -1,0 +1,15 @@
+{
+  "name": "nerdit",
+  "description": "The official Nerdit plugin for Claude Code.",
+  "owner": {
+    "name": "Nerdit",
+    "email": "contact@nerdit.ai"
+  },
+  "plugins": [
+    {
+      "name": "nerdit",
+      "source": "./",
+      "description": "Deploy, run and share the apps you build with Claude, on your own machines or a Nerdit box."
+    }
+  ]
+}

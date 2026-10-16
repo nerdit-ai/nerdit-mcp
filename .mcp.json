@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "nerdit": { "type": "http", "url": "https://mcp.nerdit.ai/mcp" }
+  }
+}

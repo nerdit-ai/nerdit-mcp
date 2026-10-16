@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <clipPath id="container">
+      <rect x="0" y="0" width="512" height="512" rx="96"/>
+    </clipPath>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="#0A0A0A"/>
+  <g clip-path="url(#container)">
+    <!-- Left vertical -->
+    <rect x="136" y="136" width="52" height="240" fill="#FFFFFF"/>
+    <!-- Right vertical -->
+    <rect x="324" y="136" width="52" height="240" fill="#FFFFFF"/>
+    <!-- Diagonal (green): slightly wider for optical balance -->
+    <polygon points="136,376 196,376 376,136 316,136" fill="#00FFB2"/>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.nerdit/nerdit",
+  "title": "Nerdit",
+  "description": "Deploy, run and share the apps you build with Claude, on your own machines or a Nerdit box.",
+  "version": "1.0.0",
+  "websiteUrl": "https://nerdit.ai/?utm_source=mcp-registry",
+  "icons": [
+    { "src": "https://nerdit.ai/logo.svg", "mimeType": "image/svg+xml", "sizes": ["any"] }
+  ],
+  "remotes": [
+    { "type": "streamable-http", "url": "https://mcp.nerdit.ai/mcp" }
+  ]
+}

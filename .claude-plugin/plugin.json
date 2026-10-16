@@ -1,0 +1,15 @@
+{
+  "name": "nerdit",
+  "displayName": "Nerdit",
+  "version": "1.0.0",
+  "description": "Deploy, run and share the apps you build with Claude, on your own machines or a Nerdit box, with access you approve.",
+  "author": { "name": "Nerdit", "email": "contact@nerdit.ai", "url": "https://nerdit.ai" },
+  "homepage": "https://nerdit.ai/?utm_source=claude-plugin",
+  "repository": "https://github.com/nerdit-ai/nerdit-mcp",
+  "license": "Apache-2.0",
+  "keywords": ["deploy", "paas", "self-hosted", "devops", "mcp"],
+  "icon": "assets/logo.svg",
+  "documentationUrl": "https://docs.nerdit.ai",
+  "supportUrl": "mailto:contact@nerdit.ai",
+  "privacyPolicyUrl": "https://nerdit.ai/privacy"
+}
