@@ -21,7 +21,8 @@ and `nerdit_call_write_tool` (changes), each with `{node_id, tool_name, argument
      `repo_url`, `ref`, first with `dry_run: true`. Otherwise `nerdit_call_write_tool` →
      `apply_project` with `{project: <[project].name>, repo_url, ref, dry_run: true}`.
    - Anything else: `nerdit_call_write_tool` → `deploy_git` with
-     `{repo_url, name, ref, dry_run: true}`. `name` is short kebab-case, from the repo name.
+     `{repo_url, name, ref, dry_run: true}`, plus `subdir` when the app is a folder of a monorepo.
+     `name` is short kebab-case, from the repo name.
 4. **Read the dry run.** Show the plan in a few lines. `waiting_for_variables` deploys nothing:
    list the `missing` names and ask the user to run, on their side,
    `nerdit vars set <project> --secret --prompt KEY`. Never ask for secret values in chat.

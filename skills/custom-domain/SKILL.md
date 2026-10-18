@@ -7,8 +7,8 @@ description: Serve a Nerdit app at the user's own subdomain (for example app.exa
 
 Needs the Pro plan; at most 3 domains per account.
 
-1. **Find the app.** `nerdit_list_nodes` for the `node_id`, and the app's name on that machine
-   (`service_name`, from `nerdit_get_project` or the deploy). Ask for the exact host.
+1. **Find the app.** `nerdit_list_nodes` for the `node_id`, and the app's name on that machine:
+   `service_name` is `services[].name` from `nerdit_get_project` (or the deploy's `name`). Ask for the exact host.
    A bare domain such as `example.com` is refused: suggest `app.example.com` or `www.example.com`,
    with a redirect from the bare name at their registrar.
 2. **Add it.** `nerdit_add_domain` with `{node_id, service_name, host}`.
