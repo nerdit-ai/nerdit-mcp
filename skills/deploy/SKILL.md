@@ -27,9 +27,9 @@ and `nerdit_call_write_tool` (changes), each with `{node_id, tool_name, argument
    list the `missing` names and ask the user to run, on their side,
    `nerdit vars set <project> --secret --prompt KEY`. Never ask for secret values in chat.
 5. **Deploy.** Same call without `dry_run`. Keep `last_deploy.version` from the answer.
-6. **Wait.** `nerdit_call_read_tool` → `wait_for_service` with `{name, version, timeout: 300}`
+6. **Wait.** `nerdit_call_read_tool` → `wait_for_service` with `{name, version, timeout: 25}`
    (once per service `label` after an apply). `failed`: read `diagnosis.remediation` and follow
-   the `diagnose` skill. `timeout`: call it again.
+   the `diagnose` skill. `timeout` or `node_timeout` (the gateway cuts machine calls at about 30 s): call it again.
 7. **Get a URL.** `nerdit_call_write_tool` → `share_service` with `{name, access: "private"}`.
    Give the user the returned `url`: it opens for them once signed in to Nerdit. Do not make an
    app public unless the user asks for it in this conversation.
