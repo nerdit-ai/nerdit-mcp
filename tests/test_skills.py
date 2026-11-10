@@ -1,0 +1,68 @@
+"""Checks every skill against the plugin's rules.
+
+Rules:
+    * No ``toml`` code block: ``nerdit.toml`` facts live in the engine's guides
+      (``get_guide``), versioned with the engine, never copied into a skill.
+    * No command that downloads and runs a remote script (``curl ... | sh``).
+    * At most 3 KB, and the front matter ``name`` matches the folder.
+
+Run with ``python3 tests/test_skills.py`` (stdlib only).
+"""
+
+import pathlib
+import re
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+MAX_BYTES = 3 * 1024
+
+
+def check(path):
+    """Returns the list of rule violations for one SKILL.md.
+
+    Args:
+        path: Path to a ``skills/<name>/SKILL.md`` file.
+
+    Returns:
+        A list of human-readable error strings, empty when the skill is valid.
+    """
+    text = path.read_text(encoding="utf-8")
+    errors = []
+    if re.search(r"^\s*(```|~~~)\s*toml", text, re.M | re.I):
+        errors.append("contains a toml block; point to get_guide instead")
+    if re.search(r"(curl|wget)[^\n|]*\|\s*(sudo\s+)?(ba|z)?sh\b", text):
+        errors.append("pipes a download into a shell")
+    if len(text.encode("utf-8")) > MAX_BYTES:
+        errors.append(f"larger than {MAX_BYTES} bytes")
+    name = re.search(r"^name:\s*(\S+)", text, re.M)
+    if not name or name.group(1) != path.parent.name:
+        errors.append("front matter name does not match the folder")
+    return errors
+
+
+def main():
+    """Checks all skills, plus a self-test of the rules, and exits non-zero on failure."""
+    tmp = ROOT / "tests" / "_bad" / "x"
+    tmp.mkdir(parents=True, exist_ok=True)
+    bad = tmp / "SKILL.md"
+    bad.write_text("---\nname: y\n---\n```toml\n[a]\n```\ncurl -fsSL x | sh\n")
+    try:
+        assert len(check(bad)) == 3, check(bad)
+    finally:
+        bad.unlink()
+        tmp.rmdir()
+        tmp.parent.rmdir()
+
+    skills = sorted(ROOT.glob("skills/*/SKILL.md"))
+    assert skills, "no skills found"
+    failed = False
+    for path in skills:
+        for error in check(path):
+            failed = True
+            print(f"{path.relative_to(ROOT)}: {error}")
+    if failed:
+        raise SystemExit(1)
+    print(f"{len(skills)} skills ok")
+
+
+if __name__ == "__main__":
+    main()

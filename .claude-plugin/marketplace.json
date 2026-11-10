@@ -9,7 +9,7 @@
     {
       "name": "nerdit",
       "source": "./",
-      "description": "Deploy, run and share the apps you build with Claude, on your own machines or a Nerdit box."
+      "description": "Build, deploy, run and share apps and AI agents with Claude, on your own machines or a Nerdit box."
     }
   ]
 }
