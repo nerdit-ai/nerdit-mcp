@@ -2,7 +2,7 @@
 
 Lets Claude deploy, run and share the apps you build, on your own machines or on a Nerdit box.
 The plugin bundles the Nerdit connector (`https://mcp.nerdit.ai/mcp`, the same server as the
-[Nerdit connector](https://claude.ai/directory/nerdit)) with four skills.
+[Nerdit connector](https://claude.ai/directory/nerdit)) with five skills.
 
 ## Install
 
@@ -23,6 +23,7 @@ to five) or a Pro box.
 
 | Skill | Ask Claude |
 |---|---|
+| `build` | "Build me an agent that watches these feeds every morning and summarizes what changed." |
 | `deploy` | "Deploy this repo to my Nerdit machine." |
 | `diagnose` | "My app is down, find out why." |
 | `custom-domain` | "Serve my app at app.example.com." |
@@ -30,6 +31,11 @@ to five) or a Pro box.
 
 Secrets never go through the chat: when an app needs one, Claude asks you to run
 `nerdit vars set <project> --secret --prompt KEY` yourself.
+
+`build` reads the guides served by the engine on your machine (`get_guide`) before writing
+code, so the `nerdit.toml` it writes matches that engine version. It needs an engine with guides;
+on an older one it says so and offers the update. Skills never contain `nerdit.toml` syntax:
+`python3 tests/test_skills.py` enforces that, along with the size limit.
 
 ## Other clients
 
