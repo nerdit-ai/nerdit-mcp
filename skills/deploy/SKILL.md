@@ -8,8 +8,9 @@ description: Deploy the current Git repository (or a project with a nerdit.toml)
 Uses the Nerdit MCP server. Machine tools are reached through `nerdit_call_read_tool` (reads)
 and `nerdit_call_write_tool` (changes), each with `{node_id, tool_name, arguments}`.
 
-1. **Pick the machine.** Call `nerdit_list_nodes`. None: tell the user to link one
-   (`curl -fsSL get.nerdit.ai | sh`) or start a box at https://app.nerdit.ai/box, then stop.
+1. **Pick the machine.** Call `nerdit_list_nodes`. None: tell the user to link one from
+   https://app.nerdit.ai/machines or start a box at https://app.nerdit.ai/box, then stop.
+   Never run an installer yourself.
    Several: ask which one. Keep its `node_id`.
 2. **Find the source.** Read `git remote get-url origin` and the current branch. Deploys clone
    over `https://` (github.com by default), so an SSH remote becomes its `https://` form. The
