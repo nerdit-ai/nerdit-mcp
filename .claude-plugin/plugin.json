@@ -8,7 +8,7 @@
   "repository": "https://github.com/nerdit-ai/nerdit-mcp",
   "license": "Apache-2.0",
   "keywords": ["build", "deploy", "ai-apps", "ai-agents", "scheduled-jobs", "webhooks", "paas", "self-hosted", "devops", "mcp"],
-  "icon": "assets/logo.svg",
+  "icon": "assets/logo-1024.png",
   "documentationUrl": "https://docs.nerdit.ai",
   "supportUrl": "mailto:contact@nerdit.ai",
   "privacyPolicyUrl": "https://nerdit.ai/privacy"

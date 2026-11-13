@@ -1,7 +1,7 @@
 {
   "name": "nerdit",
   "description": "Build, deploy, run and share apps and AI agents (AI models, scheduled jobs, webhooks), on your own machines or a Nerdit box, with access you approve.",
-  "logo": "assets/logo.svg",
+  "logo": "assets/logo-1024.png",
   "homepage": "https://nerdit.ai/?utm_source=cursor",
   "repository": "https://github.com/nerdit-ai/nerdit-mcp",
   "license": "Apache-2.0",

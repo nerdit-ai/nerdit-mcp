@@ -35,7 +35,7 @@ Secrets never go through the chat: when an app needs one, Claude asks you to run
 `build` reads the guides served by the engine on your machine (`get_guide`) before writing
 code, so the `nerdit.toml` it writes matches that engine version. It needs an engine with guides;
 on an older one it says so and offers the update. Skills never contain `nerdit.toml` syntax:
-`python3 tests/test_skills.py` enforces that, along with the size limit.
+the `skills` CI workflow (`.github/workflows/skills.yml`) enforces that, along with the size limit.
 
 ## Other clients
 
